@@ -10,7 +10,7 @@ if ! type "docker" > /dev/null; then
 fi
 
 # get ips | search inet addr: | split on : get 2nd field | print out
-ADDRESS=$(ifconfig eth0 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
+ADDRESS=$(ifconfig ens33 | grep 'inet addr:' | cut -d: -f2 | awk '{ print $1}')
 # if we have an emtpy address
 if [[ -z "${ADDRESS}"]]; then
   # some prints won't have the addr portion, do a last ditch effort to get the ip
