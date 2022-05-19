@@ -5,6 +5,8 @@ if ! type "docker" > /dev/null; then
   echo "Installing Docker"
   apt-get -y install docker.io
   apt-get -y install docker-ce
+  apt-get -y install net-tools
+  apt-get -y install docker-compose
 fi
 
 # get ips | search inet addr: | split on : get 2nd field | print out
